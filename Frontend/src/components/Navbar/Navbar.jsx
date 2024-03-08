@@ -2,14 +2,33 @@ import React from "react";
 
 const Navbar = () => {
   return (
+                                        // Navbar
     <div className="bg-red-600 w-full h-full">
       <nav className="p-2 flex justify-around text-white items-center">
-        <a href="">Logo</a>
-        <a href="" className="flex">
-          <div>icon</div>
+                                        {/* Logo or NamePage */}
+        <a href="">EcommerceProjectX</a>
+                                        {/* Categories */}
+        <a href="" className="flex bg-red-300 rounded-lg p-2 text-xs items-center">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+              />
+            </svg>
+          </div>
           <div>Categories</div>
         </a>
-        <a href="" className="flex">
+                                           {/* Location */}
+        <a href="" className="flex text-xs">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,11 +52,12 @@ const Navbar = () => {
           </div>
           <div>Location</div>
         </a>
+                                          {/* Searching */}
         <div>
-          <form className="flex bg-white rounded" action="">
-            <div>
+          <form className="flex items-center rounded-lg p-4" action="">
+            <div className="flex bg-white rounded p-1">
               <button>
-                <svg 
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -52,12 +72,18 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-            </div>
-            <div>
-              <input type="text" placeholder="What are u looking for?" />
+
+              <div>
+                <input
+                  className="rounded-lg"
+                  type="text"
+                  placeholder="What are u looking for?"
+                />
+              </div>
             </div>
           </form>
         </div>
+                                            {/* Calling */}
         <a href="" className="flex">
           <div>CallingIcon</div>
           <div>
@@ -66,8 +92,11 @@ const Navbar = () => {
             <strong className="text-sm">1800.1234</strong>
           </div>
         </a>
+                                            {/* Store */}
         <a href="">Store</a>
+                                            {/* Cart */}
         <a href="">Cart</a>
+                                            {/* User */}
         <div>User</div>
       </nav>
     </div>
