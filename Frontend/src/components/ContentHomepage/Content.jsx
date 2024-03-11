@@ -16,7 +16,7 @@ const Content = () => {
           <Navbar />
         </div>
         {/* Middle */}
-        <div className="flex flex-col items-center flex-wrap overflow-hidden ml-4 mr-4 border-2">
+        <div className="flex flex-col items-center flex-wrap overflow-hidden ml-4 mr-4 border-2 rounded-lg">
           <div className="  bg-slate-400 w-full flex flex-row overflow-hidden h-80">
             <img src={img1} alt="Phone" />
             <img src={img2} alt="Tablet" />
