@@ -5,12 +5,12 @@ import { BsChevronRight } from "react-icons/bs";
 const Navbar = () => {
   const items = listSidebar;
   return (
-    <div>
+    <div className="bg-white border-2 shadow-lg divide-solid z-20 text-black box-content flex flex-col p-2 rounded-lg w-full">
       <div>
-        <ul className="bg-white border-2 shadow-lg divide-solid z-20 text-black box-content w-1/6 flex flex-col p-2 rounded-lg text-xs">
+        <ul>
         {items.map((item)=>(
-          <li className="flex justify-between">
-            <div className="flex items-center truncate flex-wrap">
+          <li className="flex justify-between items-center">
+            <div className="flex items-center truncate">
               <i>
                 { item.icon }
               </i>
@@ -21,8 +21,10 @@ const Navbar = () => {
                 <span>{ item.name2 }</span>
               </a>
             </div>
-            <div className="flex , items-center">
-              <i><BsChevronRight /></i>
+            <div className="flex,items-center">
+              <i>
+              <BsChevronRight />
+              </i>
             </div>
           </li>
           ))}
