@@ -8,8 +8,8 @@ const Navbar = () => {
     <div className="bg-white border-2 shadow-lg divide-solid z-20 text-black box-content flex flex-col p-2 rounded-lg w-full">
       <div>
         <ul>
-        {items.map((item)=>(
-          <li className="flex justify-between items-center">
+        {items.map((item,index)=>(
+          <li key={index} className="flex justify-between items-center">
             <div className="flex items-center truncate">
               <i>
                 { item.icon }
