@@ -1,11 +1,19 @@
 import React from "react";
 import { useState } from "react";
+import { BsChevronCompactRight } from "react-icons/bs";
+import { BsChevronCompactLeft } from "react-icons/bs";
 import Navbar from "..//Navbar/Navbar";
 import img1 from "..//..//imgs/img1.jpg";
 import img2 from "..//..//imgs/img2.jpg";
 import img3 from "..//..//imgs/img3.jpg";
+import banner1 from "..//..//imgs/banner1.webp"
+import banner2 from "..//..//imgs/banner2.webp"
+import banner3 from "..//..//imgs/banner3.webp"
+
+
 
 const Content = () => {
+  const groupBanner = [banner1, banner2, banner3];
   const groupImg = [img1, img2, img3];
   const [slider, setSlider] = useState(0);
   const backSlide = () => {
@@ -34,7 +42,7 @@ const Content = () => {
         </div>
         {/* Middle */}
         <div className="flex flex-col items-center flex-wrap overflow-hidden ml-2 mr-2 w-3/5 border-2 rounded-lg">
-          <div className="  bg-slate-400 w-full flex flex-row overflow-hidden h-80 items-center">
+          <div className="  bg-slate-400 w-full flex flex-row overflow-hidden h-80 items-center group">
             {groupImg.map((imgItem, index) => (
               <img
                 style={{ transform: `translateX(-${slider * 100}%` }}
@@ -47,16 +55,16 @@ const Content = () => {
 
             <div className="flex">
               <button
-                className="absolute left-96 border-2 bg-emerald-500"
+                className="hidden group-hover:block absolute left-96 bg-black/20 text-white text-2xl cursor-pointer rounded-full"
                 onClick={backSlide}
               >
-                LEFT
+                <BsChevronCompactLeft size={30} />
               </button>
               <button
-                className="absolute right-96 border-2 bg-emerald-500"
+                className="hidden group-hover:block absolute right-96  bg-black/20 text-white text-2xl cursor-pointer rounded-full"
                 onClick={nextSlide}
               >
-                RIGHT
+                <BsChevronCompactRight size={30} />
               </button>
             </div>
           </div>
@@ -72,7 +80,13 @@ const Content = () => {
           </div>
         </div>
         {/* Right */}
-        <div className=" bg-green-300 h-[404px] w-52 rounded-lg flex items-center justify-center">Banner</div>
+        <div className="h-[404px] w-52 flex flex-col justify-evenly">
+          {groupBanner.map((banner,index)=>(
+            <a className="mr-9  w-full" key={index} href="">
+              <img src={banner} alt="" />
+            </a>
+          ))}
+        </div>
       </div>
 
       {/* Middle content */}
