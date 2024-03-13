@@ -7,7 +7,7 @@ export const register = asyncHandler(async (req, res) => {
     const { email, password, firstname, lastname } = req.body;
     if (!email || !password || !firstname || !lastname)
         return res.status(400).json({
-            sucess: false,
+            success: false,
             message: "Missing inputs"
         });
 
@@ -19,12 +19,12 @@ export const register = asyncHandler(async (req, res) => {
 
         if (!newUser)
             return res.status(400).json({
-                sucess: false,
-                message: "Register is not sucessfull!"
+                success: false,
+                message: "Register is not successfull!"
             });
 
         return res.status(200).json({
-            sucess: true,
+            success: true,
             message: "Register is successfull!",
             newUser
         })
@@ -35,7 +35,7 @@ export const login = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password)
         return res.status(400).json({
-            sucess: false,
+            success: false,
             message: "Missing inputs!"
         });
 
@@ -54,7 +54,7 @@ export const login = asyncHandler(async (req, res) => {
         // save refreshToken in cookie
         res.cookie('refreshToken', refreshToken, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 * 1000 });
         return res.status(200).json({
-            sucess: true,
+            success: true,
             accessToken,
             userData // plain obj
         });
