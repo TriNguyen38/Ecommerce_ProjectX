@@ -14,9 +14,9 @@ const Content = () => {
   const groupBanner = [banner1, banner2, banner3];
   const groupImg = [img1, img2, img3];
   const groupImgs = [
-    { img:  img1 , desc: "Iphone" },
-    { img:  img2 , desc: "Samsung" },
-    { img:  img3 , desc: "Google" },
+    { img: img1, desc: "Iphone" },
+    { img: img2, desc: "Samsung" },
+    { img: img3, desc: "Google" },
   ];
 
   const [slider, setSlider] = useState(0);
@@ -36,11 +36,7 @@ const Content = () => {
   };
   const descClick = (descIndex) => {
     setSlider(descIndex);
-  }
-  const clickBtn=()=>{
-    console.log(1)
-  }
-
+  };
 
   return (
     // Content Homepage
@@ -52,7 +48,7 @@ const Content = () => {
           <Navbar />
         </div>
         {/* Middle */}
-        <div className="flex flex-col items-center flex-wrap overflow-hidden ml-2 mr-2 w-3/5 border-2 rounded-lg">
+        <div className="flex flex-col items-center flex-wrap overflow-hidden ml-2 mr-2 w-3/5 border-2 rounded-lg shadow-lg divide-solid z-20">
           <div className="  bg-slate-400 w-full flex flex-row overflow-hidden h-80 items-center group relative">
             {groupImgs.map((imgItem, index) => (
               <img
@@ -86,10 +82,14 @@ const Content = () => {
 
           <div className="h-20 w-full">
             <div className="flex justify-around h-full" href="">
-              {groupImgs.map((descItem,descIndex)=>(
-              <div key={descIndex} className="cursor-pointer h-full flex items-center justify-center w-full hover:bg-slate-300" onClick={()=>descClick(descIndex)}>
-                {descItem.desc}
-              </div>
+              {groupImgs.map((descItem, descIndex) => (
+                <div
+                  key={descIndex}
+                  className="cursor-pointer h-full flex items-center justify-center w-full hover:bg-slate-200"
+                  onClick={() => descClick(descIndex)}
+                >
+                  {descItem.desc}
+                </div>
               ))}
             </div>
           </div>
@@ -99,7 +99,7 @@ const Content = () => {
           {groupBanner.map((banner, index) => (
             <a className="h-full" key={index} href="">
               <img
-                className="h-full w-full pb-1 rounded-lg"
+                className="h-full w-full pb-1 rounded-lg shadow-lg divide-solid z-20"
                 src={banner}
                 alt=""
               />
@@ -109,8 +109,21 @@ const Content = () => {
       </div>
 
       {/* Middle content */}
-      <div  onClick={()=>clickBtn()}>
-        <button>Click</button>
+      <div className="mt-5">
+        <div>
+          <div className="flex justify-between">
+            <a href="">Now Trending</a>
+            <a className="rounded-lg border-2 px-2 py-1 bg-gray-200 hover:bg-gray-300" href="">All</a>
+          </div>
+          <div>
+            <a className="flex justify-end cursor-pointer" href="">
+              {groupImgs.map((desc,index)=>(
+                <div key={index} className="ml-3 border-2 items-center rounded-lg px-2 py-1 bg-gray-200 hover:bg-gray-300">{desc.desc}</div>
+              ))}
+            </a>
+      
+          </div>
+        </div>
       </div>
       {/* Bot content */}
     </div>
