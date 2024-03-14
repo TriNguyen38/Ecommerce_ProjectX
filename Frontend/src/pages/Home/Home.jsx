@@ -1,6 +1,8 @@
 import React from 'react'
 import Content from '../../components/ContentHomepage/Content'
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
+
 
 
 const Home = () => {
@@ -8,6 +10,7 @@ const Home = () => {
     <div>
       <Header/>
       <Content/>
+      <Footer/>
     </div>
   )
 }

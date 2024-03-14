@@ -1,7 +1,7 @@
 import express from 'express';
 import connectToDB from './src/config/dbConnect.js';
 import dotenv from 'dotenv';
-// import initRoutes from './src/routers/index';
+import initRoutes from './src/routers/index';
 import cookieParser from 'cookie-parser';
 
 dotenv.config();
@@ -12,7 +12,7 @@ app.use(cookieParser()); // đọc data của cookie
 app.use(express.json()) // data client gửi lên đọc theo kiểu json
 app.use(express.urlencoded({extended : true})) // data client gửi lên đọc theo kiểu urlencoded (array...)
 connectToDB();
-// initRoutes(app);
+initRoutes(app);
 
 app.listen(port, () => {
     console.log("Server is listenning on http://localhost:" + port);
