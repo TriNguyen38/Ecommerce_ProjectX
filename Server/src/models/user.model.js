@@ -64,7 +64,7 @@ var userSchema = new mongoose.Schema({
 });
 
 //Hashcode password
-userSchema.pre("save", async function(next) {
+userSchema.pre("save", async function (next) {
     if (!this.isModified('password')) {
         next();
     }

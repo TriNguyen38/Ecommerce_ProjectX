@@ -63,7 +63,7 @@ const Content = () => {
             <div className="flex items-center">
               <div>
                 <button
-                  className=" hidden group-hover:block absolute bg-black/20 left-2  text-white text-2xl cursor-pointer rounded-full"
+                  className="hidden group-hover:block absolute bg-black/20 left-2  text-white text-2xl cursor-pointer rounded-full"
                   onClick={backSlide}
                 >
                   <BsChevronCompactLeft size={30} />
@@ -71,7 +71,7 @@ const Content = () => {
               </div>
               <div>
                 <button
-                  className=" hidden group-hover:block absolute bg-black/20 right-2  text-white text-2xl cursor-pointer rounded-full"
+                  className="hidden group-hover:block absolute bg-black/20 right-2  text-white text-2xl cursor-pointer rounded-full"
                   onClick={nextSlide}
                 >
                   <BsChevronCompactRight size={30} />
