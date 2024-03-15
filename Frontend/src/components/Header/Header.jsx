@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
   return (
     // Navbar
     <div className="bg-red-600 w-full h-full">
@@ -195,12 +195,14 @@ const Header = () => {
               />
             </svg>
             <span className="absolute top-2.5 right-3.5">0</span>
-
           </div>
           <div>Cart</div>
         </a>
         {/* User */}
-        <div className="flex flex-col items-center text-xs bg-red-500 px-6 py-1 rounded-lg">
+        <button
+          className="flex flex-col items-center text-xs bg-red-500 px-6 py-1 rounded-lg"
+          onClick={props.loginPage}
+        >
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +220,7 @@ const Header = () => {
             </svg>
           </div>
           <div>User</div>
-        </div>
+        </button>
       </nav>
     </div>
   );
