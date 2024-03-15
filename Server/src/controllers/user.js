@@ -77,3 +77,33 @@ export const getCurrent = asyncHandler(async (req, res) => {
         user
     });
 });
+
+export const refreshAccessToken = asyncHandler(async (req, res) => {
+    // get token from cookies
+    const cookie = req.cookies;
+    // check existence of token 
+    if (!cookie || !cookie.refreshToken) throw new Error('No Refresh Token in Cookies');
+    // check sự hơp lệ (còn hạn dùng) hay ko
+    const result = await jwt.verify(cookie.refreshToken, process.env.JWT_SECRET);
+    const response = await userModel.findOne({ _id: result._id, refreshToken: cookie.refreshToken });
+    return res.status(200).json({
+        success: response ? true : false,
+        newAccessToken: response ? generateAccessToken(response._id, response.role) : "Refresh Token not matched!"
+    });
+});
+
+export const logout = asyncHandler(async (req, res) => {
+    const cookie = req.cookies;
+    if (!cookie || !cookie.refreshToken) throw new Error('No Refresh Token in Cookies');
+    // Delete refresh token in db
+    const oldUser = await userModel.findOneAndUpdate({ refreshToken: cookie.refreshToken }, { refreshAccessToken: '' }, { new: true });
+    // Delete refresh token in cookie
+    res.clearCookie('refreshToken', {
+        httpOnly: true,
+        secure: true
+    });
+    return res.status(200).json({
+        success: true,
+        message: 'logout is done!'
+    });
+});
