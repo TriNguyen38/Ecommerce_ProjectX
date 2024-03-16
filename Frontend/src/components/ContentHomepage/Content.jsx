@@ -113,15 +113,24 @@ const Content = () => {
         <div>
           <div className="flex justify-between">
             <a href="">Now Trending</a>
-            <a className="rounded-lg border-2 px-2 py-1 bg-gray-200 hover:bg-gray-300" href="">All</a>
+            <a
+              className="rounded-lg border-2 px-2 py-1 bg-gray-200 hover:bg-gray-300"
+              href=""
+            >
+              All
+            </a>
           </div>
           <div>
             <a className="flex justify-end cursor-pointer" href="">
-              {groupImgs.map((desc,index)=>(
-                <div key={index} className="ml-3 border-2 items-center rounded-lg px-2 py-1 bg-gray-200 hover:bg-gray-300">{desc.desc}</div>
+              {groupImgs.map((desc, index) => (
+                <div
+                  key={index}
+                  className="ml-3 border-2 items-center rounded-lg px-2 py-1 bg-gray-200 hover:bg-gray-300"
+                >
+                  {desc.desc}
+                </div>
               ))}
             </a>
-      
           </div>
         </div>
       </div>
