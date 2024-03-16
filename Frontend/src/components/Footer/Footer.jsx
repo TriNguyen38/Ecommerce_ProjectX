@@ -12,6 +12,8 @@ import dienthoaivui from "..//..//imgs/dienthoaivui.webp";
 import careS from "..//..//imgs/careS.webp";
 import schanel from "..//..//imgs/schanel.webp";
 import sforum from "..//..//imgs/sforum.png";
+import certificate1 from "..//..//imgs/icons8-guarantee-certificate-64 (1).png";
+import certificate2 from "..//..//imgs/icons8-guarantee-certificate-64.png";
 
 const Footer = () => {
   const icons = [iconPayApple, iconPayAmz, iconPayGoogle, iconPayPaypal];
@@ -68,7 +70,7 @@ const Footer = () => {
 
   console.log(icons);
   return (
-    <footer className="mt-5 text-[#363636] shadow-lg divide-solid z-20 border">
+    <footer className="mt-5 text-[#363636] shadow-lg divide-solid z-20 border mb-16">
       <div>
         <div className="px-28">
           <div className="flex justify-between">
@@ -139,8 +141,8 @@ const Footer = () => {
                 </div>
                 <div className="border-2 rounded-md mb-3 ">
                   <input
-                    type="text"
-                    placeholder="Phone number"
+                    type="phone number"
+                    placeholder="number"
                     className="w-full placeholder:text-sm px-2 py-0"
                   />
                 </div>
@@ -225,82 +227,141 @@ const Footer = () => {
           </div>
         </div>
 
-          <div className=" bg-gray-100 w-full px-28 pt-3">
-            <div className=" flex justify-between">
+        <div className=" bg-gray-100 w-full px-28 pt-3">
+          <div className=" flex justify-between">
             <div className="px-4 py-4 w-1/4 text-xs">
               <span>
-                <span><a href="">New year gift 2024</a></span>
+                <span>
+                  <a href="">New year gift 2024</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Phone</a></span>
+                <span>
+                  <a href="">Phone</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Iphone</a></span>
+                <span>
+                  <a href="">Iphone</a>
+                </span>
                 <br />
               </span>
               <span>
-                <span><a href="">Iphone 15</a></span>
+                <span>
+                  <a href="">Iphone 15</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Iphone 15 Promax</a></span>
-              </span>
-            </div>
-            <div className="px-4 py-4 w-1/4 text-xs">
-              <span>
-                <span><a href="">Vivo phone</a></span>
-                <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Oppo Phone</a></span>
-                <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Xiaomi phone</a></span>
-                <br />
-              </span>
-              <span>
-                <span><a href="">Samsung Galaxy</a></span>
-                <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Samsung Galaxy A</a></span>
+                <span>
+                  <a href="">Iphone 15 Promax</a>
+                </span>
               </span>
             </div>
             <div className="px-4 py-4 w-1/4 text-xs">
               <span>
-                <span><a href="">Laptop</a></span>
+                <span>
+                  <a href="">Vivo phone</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Laptop Acer</a></span>
+                <span>
+                  <a href="">Oppo Phone</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Laptop Dell</a></span>
-                <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Laptop Hp</a></span>
+                <span>
+                  <a href="">Xiaomi phone</a>
+                </span>
                 <br />
               </span>
               <span>
-                <span><a href="">TVs</a></span>
+                <span>
+                  <a href="">Samsung Galaxy</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">TV Samsung</a></span>
-                <span>&nbsp;-&nbsp;</span>
-                <span><a href="">TV Sony</a></span>
-                <span>&nbsp;-&nbsp;</span>
-                <span><a href="">TV LG</a></span>
+                <span>
+                  <a href="">Samsung Galaxy A</a>
+                </span>
               </span>
             </div>
             <div className="px-4 py-4 w-1/4 text-xs">
               <span>
-                <span><a href="">SmartHome</a></span>
+                <span>
+                  <a href="">Laptop</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Vacuum cleaner</a></span>
+                <span>
+                  <a href="">Laptop Acer</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Electronic kitchen scale</a></span>
+                <span>
+                  <a href="">Laptop Dell</a>
+                </span>
+                <span>&nbsp;-&nbsp;</span>
+                <span>
+                  <a href="">Laptop Hp</a>
+                </span>
                 <br />
               </span>
               <span>
-                <span><a href="">Air fryer</a></span>
+                <span>
+                  <a href="">TVs</a>
+                </span>
                 <span>&nbsp;-&nbsp;</span>
-                <span><a href="">Electric rice cooker</a></span>
+                <span>
+                  <a href="">TV Samsung</a>
+                </span>
+                <span>&nbsp;-&nbsp;</span>
+                <span>
+                  <a href="">TV Sony</a>
+                </span>
+                <span>&nbsp;-&nbsp;</span>
+                <span>
+                  <a href="">TV LG</a>
+                </span>
               </span>
             </div>
-   
-   
-     
+            <div className="px-4 py-4 w-1/4 text-xs">
+              <span>
+                <span>
+                  <a href="">SmartHome</a>
+                </span>
+                <span>&nbsp;-&nbsp;</span>
+                <span>
+                  <a href="">Vacuum cleaner</a>
+                </span>
+                <span>&nbsp;-&nbsp;</span>
+                <span>
+                  <a href="">Electronic kitchen scale</a>
+                </span>
+                <br />
+              </span>
+              <span>
+                <span>
+                  <a href="">Air fryer</a>
+                </span>
+                <span>&nbsp;-&nbsp;</span>
+                <span>
+                  <a href="">Electric rice cooker</a>
+                </span>
+              </span>
             </div>
-            {/* bottom */}
-            <div></div>
           </div>
-
+          {/* bottom */}
+          <div>
+            <div>
+              <p className="text-[10px] text-[#00000080] mb-1">
+                Công ty TNHH Thương Mại và Dịch Vụ Kỹ Thuật DIỆU PHÚC - GPĐKKD:
+                0316172372 cấp tại Sở KH & ĐT TP. HCM. Địa chỉ văn phòng:
+                350-352 Võ Văn Kiệt, Phường Cô Giang, Quận 1, Thành phố Hồ Chí
+                Minh, Việt Nam. Điện thoại: 028.7108.9666.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <a className="flex items-center m-0" href="">
+                <img className="w-[45px]" src={certificate1} alt="" />
+              </a>
+              <a className="flex items-center m-0" href="">
+                <img className="w-[45px]" src={certificate2} alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
