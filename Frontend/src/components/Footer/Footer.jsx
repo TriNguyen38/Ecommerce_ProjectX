@@ -1,18 +1,28 @@
 import React from "react";
-import {
-  FaApplePay,
-  FaCcAmazonPay,
-  FaGooglePay,
-  FaPaypal,
-} from "react-icons/fa";
+import iconPayAmz from "./PaymentIcon/icons8-amazon-pay.svg";
+import iconPayGoogle from "./PaymentIcon/icons8-google-pay.svg";
+import iconPayApple from "./PaymentIcon/icons8-apple-pay (1).svg";
+import iconPayPaypal from "./PaymentIcon/icons8-paypal.svg";
+import iconSocialFacebook from "./SocialIcon/icons8-facebook.svg";
+import iconSocialInstagram from "./SocialIcon/icons8-instagram.svg";
+import iconSocialZalo from "./SocialIcon/icons8-zalo.svg";
+import iconSocialTiktok from "./SocialIcon/icons8-tiktok.svg";
+import iconSocialYoutube from "./SocialIcon/icons8-youtube.svg";
+import dienthoaivui from "..//..//imgs/dienthoaivui.webp";
+import careS from "..//..//imgs/careS.webp";
+import schanel from "..//..//imgs/schanel.webp";
+import sforum from "..//..//imgs/sforum.png";
 
 const Footer = () => {
-  const icons = [
-    <FaApplePay />,
-    <FaCcAmazonPay />,
-    <FaGooglePay />,
-    <FaPaypal />,
+  const icons = [iconPayApple, iconPayAmz, iconPayGoogle, iconPayPaypal];
+  const iconsSocial = [
+    iconSocialFacebook,
+    iconSocialInstagram,
+    iconSocialZalo,
+    iconSocialTiktok,
+    iconSocialYoutube,
   ];
+
   const information = [
     "Online Shopping and Payment",
     "Online Installment Purchase",
@@ -37,12 +47,30 @@ const Footer = () => {
     "Phone Warranty Service",
     "Extended Warranty Service",
   ];
+  const affiliate = [
+    {
+      title: "Warranty repair system for Phones - Computers",
+      picture: dienthoaivui,
+    },
+    {
+      title: "Authorized Apple Service Center",
+      picture: careS,
+    },
+    {
+      title: "Technology entertainment channel for young people",
+      picture: schanel,
+    },
+    {
+      title: "The latest technology information website",
+      picture: sforum,
+    },
+  ];
 
   console.log(icons);
   return (
-    <footer className="mt-5 px-28 text-[#363636]">
+    <footer className="mt-5 text-[#363636] shadow-lg divide-solid z-20 border">
       <div>
-        <div>
+        <div className="px-28">
           <div className="flex justify-between">
             {/* col 1 */}
             <div className="px-4 py-4 w-1/4">
@@ -82,11 +110,11 @@ const Footer = () => {
                   <ul className="flex flex-row">
                     {icons.map((iconDetail, index) => (
                       <li
-                        className="w-1/4 h-full border border-black rounded flex justify-center cursor-pointer bg-red-100 ml-1"
+                        className="w-1/4 border border-black rounded flex justify-center cursor-pointer bg-red-100 ml-1"
                         key={index}
                       >
-                        <a href="">
-                          <i className="text-2xl">{iconDetail}</i>
+                        <a className="flex justify-center" href="">
+                          <img className="w-2/3" src={iconDetail} alt="" />
                         </a>
                       </li>
                     ))}
@@ -166,41 +194,113 @@ const Footer = () => {
             </div>
             {/* col 4 */}
             <div className="px-4 py-4 w-1/4">
-            <div className="mb-3">
+              <div className="mb-3">
                 <div>
                   <p className="title mb-3">Connect with us</p>
                 </div>
-                <div className="text-xs">
-                  <ul>
-                    {information.map((infor, index) => (
-                      <li className="mb-2" key={index}>
-                        <a href="">{infor}</a>
+                <div className="text-xs mb-3">
+                  <ul className="flex items-center w-4/5">
+                    {iconsSocial.map((iconSocial, index) => (
+                      <li className="mb-2 border ml-3 rounded-md" key={index}>
+                        <a href="">
+                          <img src={iconSocial} alt="" />
+                        </a>
                       </li>
                     ))}
                   </ul>
                 </div>
+                <div>
+                  <p className="mb-3">Affiliate websites</p>
+                  {affiliate.map((channel, index) => (
+                    <div key={index} className="text-xs mb-2">
+                      <p className="mb-1">{channel.title}</p>
+                      <a href="">
+                        <img src={channel.picture} alt="" />
+                      </a>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-
-          <div className="flex justify-between">
-            <div className="px-4 py-4 w-1/4">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi,
-              quis.
-            </div>
-            <div className="px-4 py-4 w-1/4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, ea.
-            </div>
-            <div className="px-4 py-4 w-1/4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
-              aspernatur.
-            </div>
-            <div className="px-4 py-4 w-1/4">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
-              quibusdam?
-            </div>
-          </div>
         </div>
+
+          <div className=" bg-gray-100 w-full px-28 pt-3">
+            <div className=" flex justify-between">
+            <div className="px-4 py-4 w-1/4 text-xs">
+              <span>
+                <span><a href="">New year gift 2024</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Phone</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Iphone</a></span>
+                <br />
+              </span>
+              <span>
+                <span><a href="">Iphone 15</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Iphone 15 Promax</a></span>
+              </span>
+            </div>
+            <div className="px-4 py-4 w-1/4 text-xs">
+              <span>
+                <span><a href="">Vivo phone</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Oppo Phone</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Xiaomi phone</a></span>
+                <br />
+              </span>
+              <span>
+                <span><a href="">Samsung Galaxy</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Samsung Galaxy A</a></span>
+              </span>
+            </div>
+            <div className="px-4 py-4 w-1/4 text-xs">
+              <span>
+                <span><a href="">Laptop</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Laptop Acer</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Laptop Dell</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Laptop Hp</a></span>
+                <br />
+              </span>
+              <span>
+                <span><a href="">TVs</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">TV Samsung</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">TV Sony</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">TV LG</a></span>
+              </span>
+            </div>
+            <div className="px-4 py-4 w-1/4 text-xs">
+              <span>
+                <span><a href="">SmartHome</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Vacuum cleaner</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Electronic kitchen scale</a></span>
+                <br />
+              </span>
+              <span>
+                <span><a href="">Air fryer</a></span>
+                <span>&nbsp;-&nbsp;</span>
+                <span><a href="">Electric rice cooker</a></span>
+              </span>
+            </div>
+   
+   
+     
+            </div>
+            {/* bottom */}
+            <div></div>
+          </div>
+
       </div>
     </footer>
   );
