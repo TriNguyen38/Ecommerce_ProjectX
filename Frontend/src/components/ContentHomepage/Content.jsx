@@ -9,6 +9,16 @@ import img3 from "..//..//imgs/img3.jpg";
 import banner1 from "..//..//imgs/banner1.webp";
 import banner2 from "..//..//imgs/banner2.webp";
 import banner3 from "..//..//imgs/banner3.webp";
+import phone1 from "..//..//imgs/itemsContent/iphone-13_2_.webp";
+import phone2 from "..//..//imgs/itemsContent/iphone-14-pro_2__5.webp";
+import phone3 from "..//..//imgs/itemsContent/iphone-15-plus_1__1.webp";
+import phone4 from "..//..//imgs/itemsContent/iphone-15-pro-max_3.webp";
+import phone5 from "..//..//imgs/itemsContent/oppo-reno-11-f-xanh-2.webp";
+import phone6 from "..//..//imgs/itemsContent/samsung-galaxy-s23-ultra.webp";
+import phone7 from "..//..//imgs/itemsContent/samsung-galaxy-z-flip-5-256gb_1_5.webp";
+import phone8 from "..//..//imgs/itemsContent/ss-s24-ultra-xam-222.webp";
+import phone9 from "..//..//imgs/itemsContent/xiaomi-redmi-note-13_1__1_1.webp";
+import phone10 from "..//..//imgs/itemsContent/xiaomi-redmi-note-13-pro-4g_13__1.webp";
 
 const Content = () => {
   const groupBanner = [banner1, banner2, banner3];
@@ -18,6 +28,9 @@ const Content = () => {
     { img: img2, desc: "Samsung" },
     { img: img3, desc: "Google" },
   ];
+  const groupItems = [
+    phone1, phone2, phone3, phone4, phone5, phone6,phone7, phone8, phone9,phone10
+  ]
 
   const [slider, setSlider] = useState(0);
   const backSlide = () => {
@@ -111,7 +124,7 @@ const Content = () => {
       {/* Middle content */}
       <div className="mt-5">
         <div>
-          <div className="flex justify-between">
+          <div className="flex justify-between mb-3">
             <a href="">Now Trending</a>
             <a
               className="rounded-lg border-2 px-2 py-1 bg-gray-200 hover:bg-gray-300"
@@ -132,6 +145,29 @@ const Content = () => {
               ))}
             </a>
           </div>
+        </div>
+        <div className="flex flex-row justify-between mt-3">
+          {groupItems.map((item, index) => (
+            <div key={index} className="mr-2 w-1/6">
+              <div className="p-2 border-2 rounded-md shadow-lg divide-solid z-20">
+                <div>
+                <div>
+                  <img
+                    className="mt-2 w-full"
+                    src={item}
+                    alt=""
+                  />
+                </div>
+                <div className="mb-1">Name</div>
+                <div className="mb-1">Price</div>
+                <div className="mb-1">Member</div>
+                <div className="mb-1">Promotion</div>
+              </div>
+              <div className="mb-1">Vote</div>
+              </div>
+             
+            </div>
+          ))}
         </div>
       </div>
       {/* Bot content */}
