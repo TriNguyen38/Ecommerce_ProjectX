@@ -203,6 +203,7 @@ const Content = () => {
                 </div>
               ))}
               <div className="flex items-center z-30">
+                {(sliderItem !== 0) ?(
                 <div>
                   <button
                     className="absolute bg-black/20 left-36  text-white text-2xl cursor-pointer rounded-full"
@@ -211,7 +212,7 @@ const Content = () => {
                     <BsChevronCompactLeft size={30} />
                   </button>
                 </div>
-
+):(
                 <div>
                   <button
                     className="absolute bg-black/20 right-36  text-white text-2xl cursor-pointer rounded-full"
@@ -220,7 +221,9 @@ const Content = () => {
                     <BsChevronCompactRight size={30} />
                   </button>
                 </div>
+                 )}
               </div>
+             
             </div>
           </div>
         </div>
