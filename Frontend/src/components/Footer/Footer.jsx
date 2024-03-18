@@ -72,7 +72,7 @@ const Footer = () => {
   return (
     <footer className="mt-5 text-[#363636] shadow-lg divide-solid z-20 border mb-16">
       <div>
-        <div className="px-28">
+        <div className="px-32">
           <div className="flex justify-between">
             {/* col 1 */}
             <div className="px-4 py-4 w-1/4">
