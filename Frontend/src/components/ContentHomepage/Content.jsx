@@ -52,6 +52,7 @@ const Content = () => {
   const nextSlider = () => {
     if (sliderItem === groupItems.length - 6) {
       setSliderItem(0);
+      console.log(sliderItem + 1);
     } else {
       setSliderItem(sliderItem + 1);
     }
@@ -174,11 +175,10 @@ const Content = () => {
           <div className="mt-3 flex justify-between w-[200%]">
             <div className="flex">
               {groupItems.map((item, index) => (
-                <div className="">
+                <div key={index} className="">
                   <div
-                    key={index}
                     style={{ transform: `translateX(-${sliderItem * 100}%` }}
-                    className="w-full h-auto"
+                    className="w-full h-auto duration-700"
                   >
                     <div className="flex flex-row overflow-hidden">
                       <div className="mr-2 flex flex-col border-2 rounded-md shadow-lg divide-solid z-20">
@@ -203,27 +203,29 @@ const Content = () => {
                 </div>
               ))}
               <div className="flex items-center z-30">
-                {(sliderItem !== 0) ?(
-                <div>
-                  <button
-                    className="absolute bg-black/20 left-36  text-white text-2xl cursor-pointer rounded-full"
-                    onClick={backSlider}
-                  >
-                    <BsChevronCompactLeft size={30} />
-                  </button>
-                </div>
-):(
-                <div>
-                  <button
-                    className="absolute bg-black/20 right-36  text-white text-2xl cursor-pointer rounded-full"
-                    onClick={nextSlider}
-                  >
-                    <BsChevronCompactRight size={30} />
-                  </button>
-                </div>
-                 )}
+                {sliderItem !== 0 && (
+                  <div>
+                    <button
+                      className="absolute bg-black/20 left-36  text-white text-2xl cursor-pointer rounded-full"
+                      onClick={backSlider}
+                    >
+                      <BsChevronCompactLeft size={30} />
+                    </button>
+                  </div>
+                )}
+                {sliderItem !== groupItems.length - 6 && ( 
+                //  groupItems.length - 6 vì giao diện đang hiển thị trên cùng 1 hàng là 6 items rồi
+                //  thì khi click Next hình tiếp theo sẽ là hình thứ 7 và state sliderItem sẽ cập nhật từ 0 + 1
+                  <div>
+                    <button
+                      className="absolute bg-black/20 right-36  text-white text-2xl cursor-pointer rounded-full"
+                      onClick={nextSlider}
+                    >
+                      <BsChevronCompactRight size={30} />
+                    </button>
+                  </div>
+                )}
               </div>
-             
             </div>
           </div>
         </div>
