@@ -20,10 +20,10 @@ import phone8 from "..//..//imgs/itemsContent/ss-s24-ultra-xam-222.webp";
 import phone9 from "..//..//imgs/itemsContent/xiaomi-redmi-note-13_1__1_1.webp";
 import phone10 from "..//..//imgs/itemsContent/xiaomi-redmi-note-13-pro-4g_13__1.webp";
 import ProductsHomepage from "./ProductsHomepage";
+import Slider from "../Slider/Slider";
 
 const Content = () => {
   const groupBanner = [banner1, banner2, banner3];
-  const groupImg = [img1, img2, img3];
   const groupImgs = [
     { img: img1, desc: "Iphone" },
     { img: img2, desc: "Samsung" },
@@ -88,51 +88,7 @@ const Content = () => {
             <Navbar />
           </div>
           {/* Middle */}
-          <div className="flex flex-col items-center flex-wrap overflow-hidden ml-2 mr-2 w-3/5 border-2 rounded-lg shadow-lg divide-solid z-20">
-            <div className="  bg-slate-400 w-full flex flex-row overflow-hidden h-80 items-center group relative">
-              {groupImgs.map((imgItem, index) => (
-                <img
-                  style={{ transform: `translateX(-${slider * 100}%` }}
-                  key={index}
-                  src={imgItem.img}
-                  alt="Phone"
-                  className="duration-700"
-                />
-              ))}
-              <div className="flex items-center">
-                <div>
-                  <button
-                    className="hidden group-hover:block absolute bg-black/20 left-2  text-white text-2xl cursor-pointer rounded-full"
-                    onClick={backSlide}
-                  >
-                    <BsChevronCompactLeft size={30} />
-                  </button>
-                </div>
-                <div>
-                  <button
-                    className="hidden group-hover:block absolute bg-black/20 right-2  text-white text-2xl cursor-pointer rounded-full"
-                    onClick={nextSlide}
-                  >
-                    <BsChevronCompactRight size={30} />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-20 w-full">
-              <div className="flex justify-around h-full" href="">
-                {groupImgs.map((descItem, descIndex) => (
-                  <div
-                    key={descIndex}
-                    className="cursor-pointer h-full flex items-center justify-center w-full hover:bg-slate-200"
-                    onClick={() => descClick(descIndex)}
-                  >
-                    {descItem.desc}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <Slider />
           {/* Right */}
           <div className="h-[404px] flex flex-col w-1/4">
             {groupBanner.map((banner, index) => (
@@ -146,7 +102,6 @@ const Content = () => {
             ))}
           </div>
         </div>
-
         {/* Middle content */}
         <div className="mt-5">
           <div>
@@ -213,9 +168,9 @@ const Content = () => {
                     </button>
                   </div>
                 )}
-                {sliderItem !== groupItems.length - 6 && ( 
-                //  groupItems.length - 6 vì giao diện đang hiển thị trên cùng 1 hàng là 6 items rồi
-                //  thì khi click Next hình tiếp theo sẽ là hình thứ 7 và state sliderItem sẽ cập nhật từ 0 + 1
+                {sliderItem !== groupItems.length - 6 && (
+                  //  groupItems.length - 6 vì giao diện đang hiển thị trên cùng 1 hàng là 6 items rồi
+                  //  thì khi click Next hình tiếp theo sẽ là hình thứ 7 và state sliderItem sẽ cập nhật từ 0 + 1
                   <div>
                     <button
                       className="absolute bg-black/20 right-36  text-white text-2xl cursor-pointer rounded-full"
