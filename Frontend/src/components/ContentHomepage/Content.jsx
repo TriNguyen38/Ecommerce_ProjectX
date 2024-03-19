@@ -58,25 +58,6 @@ const Content = () => {
     }
   };
 
-  const [slider, setSlider] = useState(0);
-  const backSlide = () => {
-    if (slider === 0) {
-      setSlider(groupImg.length - 1);
-    } else {
-      setSlider(slider - 1);
-    }
-  };
-  const nextSlide = () => {
-    if (slider === groupImg.length - 1) {
-      setSlider(0);
-    } else {
-      setSlider(slider + 1);
-    }
-  };
-  const descClick = (descIndex) => {
-    setSlider(descIndex);
-  };
-
   return (
     // Content Homepage
     <div className="mx-32 my-2.5 px-2 py-1 overflow-hidden">
@@ -130,7 +111,7 @@ const Content = () => {
           <div className="mt-3 flex justify-between w-[200%]">
             <div className="flex">
               {groupItems.map((item, index) => (
-                <div key={index} className="">
+                <div key={index}>
                   <div
                     style={{ transform: `translateX(-${sliderItem * 100}%` }}
                     className="w-full h-auto duration-700"
@@ -157,14 +138,15 @@ const Content = () => {
                   </div>
                 </div>
               ))}
-              <div className="flex items-center z-30">
+              <div className="flex items-center z-20">
                 {sliderItem !== 0 && (
                   <div>
                     <button
-                      className="absolute bg-black/20 left-36  text-white text-2xl cursor-pointer rounded-full"
+                      className="absolute bg-white/20 left-32  text-black text-2xl cursor-pointer shadow-lg divide-solid z-20 rounded-r-full"
+                      style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)" }}
                       onClick={backSlider}
                     >
-                      <BsChevronCompactLeft size={30} />
+                      <BsChevronCompactLeft size={35} className="my-4" />
                     </button>
                   </div>
                 )}
@@ -173,10 +155,11 @@ const Content = () => {
                   //  thì khi click Next hình tiếp theo sẽ là hình thứ 7 và state sliderItem sẽ cập nhật từ 0 + 1
                   <div>
                     <button
-                      className="absolute bg-black/20 right-36  text-white text-2xl cursor-pointer rounded-full"
+                      className="absolute bg-white/20 right-32  text-black text-2xl cursor-pointer shadow-lg divide-solid z-20 rounded-l-full"
+                      style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)" }}
                       onClick={nextSlider}
                     >
-                      <BsChevronCompactRight size={30} />
+                      <BsChevronCompactRight size={35} className="my-4" />
                     </button>
                   </div>
                 )}
