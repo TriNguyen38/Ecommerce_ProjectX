@@ -50,7 +50,7 @@ const Content = () => {
     }
   };
   const nextSlider = () => {
-    if (sliderItem === groupItems.length - 6) {
+    if (sliderItem === groupItems.length - 5) {
       setSliderItem(0);
       console.log(sliderItem + 1);
     } else {
@@ -108,17 +108,17 @@ const Content = () => {
               </a>
             </div>
           </div>
-          <div className="mt-3 flex justify-between w-[200%]">
-            <div className="flex">
+          <div className="mt-3 flex justify-between w-[400%]">
+            <div className="flex flex-wrap">
               {groupItems.map((item, index) => (
                 <div key={index}>
                   <div
                     style={{ transform: `translateX(-${sliderItem * 100}%` }}
-                    className="w-full h-auto duration-700"
+                    className="w-full h-auto duration-500"
                   >
-                    <div className="flex flex-row overflow-hidden">
+                    <div className="flex flex-row">
                       <div className="mr-2 flex flex-col border-2 rounded-md shadow-lg divide-solid z-20">
-                        <div className="p-3">
+                        <div className="p-3 relative w-[223px]">
                           <div>
                             <img className="mt-2 w-[160px]" src={item} alt="" />
                           </div>
@@ -130,9 +130,19 @@ const Content = () => {
                           </div>
                           <div>Discount percent</div>
                           <div className="mb-1">Member</div>
-                          <div className="mb-1">Promotion</div>
+                          <div
+                            className="ml-2 mb-2 absolute top-[-1px] left-[-10px] text-xs w-[90px] bg-red-600 rounded-tl-lg"
+                            
+                          >
+                            <p className="text-white my-1 text-center">
+                              Discount 15%
+                            </p>
+                          </div>
                         </div>
                         <div className="mb-1">Vote</div>
+                        <div className="ml-2 mb-2 absolute top-[-1px] right-2 text-[10px] w-[50px] rounded border-2">
+                          <p className="text-blue-500 my-1 text-center">0% installment</p>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -150,9 +160,9 @@ const Content = () => {
                     </button>
                   </div>
                 )}
-                {sliderItem !== groupItems.length - 6 && (
-                  //  groupItems.length - 6 vì giao diện đang hiển thị trên cùng 1 hàng là 6 items rồi
-                  //  thì khi click Next hình tiếp theo sẽ là hình thứ 7 và state sliderItem sẽ cập nhật từ 0 + 1
+                {sliderItem !== groupItems.length - 5 && (
+                  //  groupItems.length - 5 vì giao diện đang hiển thị trên cùng 1 hàng là 5 items rồi
+                  //  thì khi click Next hình tiếp theo sẽ là hình thứ 6 và state sliderItem sẽ cập nhật từ 0 + 1
                   <div>
                     <button
                       className="absolute bg-white/20 right-32  text-black text-2xl cursor-pointer shadow-lg divide-solid z-20 rounded-l-full"

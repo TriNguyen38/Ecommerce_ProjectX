@@ -41,24 +41,25 @@ const Slider = () => {
             key={index}
             src={imgItem.img}
             alt="Phone"
-            className="duration-700"
+            className="duration-500"
           />
         ))}
         <div className="flex items-center">
           <div>
             <button
-              className="hidden group-hover:block absolute bg-black/20 left-2  text-white text-2xl cursor-pointer rounded-full"
+              className="hidden group-hover:block absolute bg-black/40 left-0  text-white text-2xl cursor-pointer rounded-r-full shadow-lg divide-solid z-20 "
+             
               onClick={backSlide}
             >
-              <BsChevronCompactLeft size={30} />
+              <BsChevronCompactLeft size={35} className="my-4" />
             </button>
           </div>
           <div>
             <button
-              className="hidden group-hover:block absolute bg-black/20 right-2  text-white text-2xl cursor-pointer rounded-full"
+              className="hidden group-hover:block absolute bg-black/40 right-0  text-white text-2xl cursor-pointer rounded-l-full shadow-lg divide-solid z-20 "
               onClick={nextSlide}
             >
-              <BsChevronCompactRight size={30} />
+              <BsChevronCompactRight size={35} className="my-4" />
             </button>
           </div>
         </div>
