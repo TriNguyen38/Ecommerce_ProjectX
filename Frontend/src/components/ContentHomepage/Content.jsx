@@ -42,20 +42,12 @@ const Content = () => {
     phone10,
   ];
   const [sliderItem, setSliderItem] = useState(0);
+
   const backSlider = () => {
-    if (sliderItem === 0) {
-      setSliderItem(groupItems.length - 6);
-    } else {
-      setSliderItem(sliderItem - 1);
-    }
+    setSliderItem(sliderItem - 1);
   };
   const nextSlider = () => {
-    if (sliderItem === groupItems.length - 5) {
-      setSliderItem(0);
-      console.log(sliderItem + 1);
-    } else {
-      setSliderItem(sliderItem + 1);
-    }
+    setSliderItem(sliderItem + 1);
   };
 
   return (
@@ -130,10 +122,7 @@ const Content = () => {
                           </div>
                           <div>Discount percent</div>
                           <div className="mb-1">Member</div>
-                          <div
-                            className="ml-2 mb-2 absolute top-[-1px] left-[-10px] text-xs w-[90px] bg-red-600 rounded-tl-lg"
-                            
-                          >
+                          <div className="ml-2 mb-2 absolute top-[-1px] left-[-10px] text-xs w-[90px] bg-red-600 rounded-tl-lg">
                             <p className="text-white my-1 text-center">
                               Discount 15%
                             </p>
@@ -141,8 +130,10 @@ const Content = () => {
                         </div>
                         <div className="mb-1">Vote</div>
                         <div className="ml-2 mb-2 absolute top-[-1px] right-2 text-[10px] w-[50px] rounded border-2">
-                          <p className="text-blue-500 my-1 text-center">0% installment</p>
-                          </div>
+                          <p className="text-blue-500 my-1 text-center">
+                            0% installment
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>

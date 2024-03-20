@@ -42,7 +42,7 @@ const Slider = () => {
             src={imgItem.img}
             alt="Phone"
             className="duration-500"
-          />
+          />  
         ))}
         <div className="flex items-center">
           <div>
