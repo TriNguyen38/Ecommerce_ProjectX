@@ -42,13 +42,12 @@ const Slider = () => {
             src={imgItem.img}
             alt="Phone"
             className="duration-500"
-          />  
+          />
         ))}
         <div className="flex items-center">
           <div>
             <button
               className="hidden group-hover:block absolute bg-black/40 left-0  text-white text-2xl cursor-pointer rounded-r-full shadow-lg divide-solid z-20 "
-             
               onClick={backSlide}
             >
               <BsChevronCompactLeft size={35} className="my-4" />
