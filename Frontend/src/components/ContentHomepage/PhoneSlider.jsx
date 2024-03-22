@@ -41,6 +41,7 @@ const PhoneSlider = () => {
   };
   const nextSlider = () => {
     setSliderItem(sliderItem + 1);
+    console.log(groupItems.length);
   };
 
   return (
@@ -183,18 +184,19 @@ const PhoneSlider = () => {
             </div>
           )}
           {sliderItem !== groupItems.length - 5 && (
-            //  groupItems.length - 5 vì giao diện đang hiển thị trên cùng 1 hàng là 5 items rồi
-            //  thì khi click Next hình tiếp theo sẽ là hình thứ 6 và state sliderItem sẽ cập nhật từ 0 + 1
-            <div>
-              <button
-                className="absolute bg-white/20 right-32  text-black text-2xl cursor-pointer shadow-lg divide-solid z-20 rounded-l-full"
-                style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)" }}
-                onClick={() => nextSlider()}
-              >
-                <BsChevronCompactRight size={35} className="my-4" />
-              </button>
-            </div>
-          )}
+              //  groupItems.length - 5 vì giao diện đang hiển thị trên cùng 1 hàng là 5 items rồi
+              //  thì khi click Next hình tiếp theo sẽ là hình thứ 6 và state sliderItem sẽ cập nhật từ 0 + 1
+              <div>
+                <button
+                  className="absolute bg-white/20 right-32  text-black text-2xl cursor-pointer shadow-lg divide-solid z-20 rounded-l-full"
+                  style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)" }}
+                  onClick={() => nextSlider()}
+                >
+                  <BsChevronCompactRight size={35} className="my-4" />
+                </button>
+              </div>
+            )}
+            
         </div>
       </div>
     </div>

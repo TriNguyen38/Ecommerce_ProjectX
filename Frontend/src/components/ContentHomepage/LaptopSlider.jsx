@@ -44,6 +44,7 @@ const LaptopSlider = () => {
     phone9,
     phone10,
   ];
+  console.log(groupItems.length)
 
   const [sliderItem, setSliderItem] = useState(0);
   const backSlider = () => {
@@ -51,6 +52,7 @@ const LaptopSlider = () => {
   };
   const nextSlider = () => {
     setSliderItem(sliderItem + 1);
+  
   };
 
   return (
@@ -192,7 +194,7 @@ const LaptopSlider = () => {
               </button>
             </div>
           )}
-          {sliderItem !== groupItems.length - 5 && (
+          {sliderItem !== groupItems.length - 5 &&(((groupItems.length)-10)/2 !== sliderItem) && (
             //  groupItems.length - 5 vì giao diện đang hiển thị trên cùng 1 hàng là 5 items rồi
             //  thì khi click Next hình tiếp theo sẽ là hình thứ 6 và state sliderItem sẽ cập nhật từ 0 + 1
             <div>
