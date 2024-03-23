@@ -8,6 +8,7 @@ import banner3 from "..//..//imgs/banner3.webp";
 import PhoneSlider from "./PhoneSlider";
 import Slider from "../Slider/Slider";
 import LaptopSlider from "./LaptopSlider";
+import CategoriesContent from "./CategoriesContent";
 
 const Content = () => {
   const groupBanner = [banner1, banner2, banner3];
@@ -42,6 +43,7 @@ const Content = () => {
         <LaptopSlider/>
         {/* Bot content */}
       </div>
+      <CategoriesContent/>
     </div>
   );
 };
