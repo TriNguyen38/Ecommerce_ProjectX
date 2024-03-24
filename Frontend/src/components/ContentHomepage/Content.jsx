@@ -4,7 +4,6 @@ import Navbar from "..//Navbar/Navbar";
 import banner1 from "..//..//imgs/banner1.webp";
 import banner2 from "..//..//imgs/banner2.webp";
 import banner3 from "..//..//imgs/banner3.webp";
-
 import PhoneSlider from "./PhoneSlider";
 import Slider from "../Slider/Slider";
 import LaptopSlider from "./LaptopSlider";
@@ -40,10 +39,11 @@ const Content = () => {
         </div>
         {/* Middle content */}
         <PhoneSlider />
-        <LaptopSlider/>
+        <LaptopSlider />
         {/* Bot content */}
       </div>
-      <CategoriesContent/>
+
+      <CategoriesContent />
     </div>
   );
 };
