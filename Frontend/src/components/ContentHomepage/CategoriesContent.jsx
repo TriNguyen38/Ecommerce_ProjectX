@@ -7,7 +7,7 @@ const CategoriesContent = () => {
     { title: "Tablet", items: Tablet },
     { title: "Laptop", items: Laptop },
   ];
-  console.log(categoriesContent[0].items);
+
   return (
     <div className="mt-5">
       {categoriesContent.map((category, index) => (
