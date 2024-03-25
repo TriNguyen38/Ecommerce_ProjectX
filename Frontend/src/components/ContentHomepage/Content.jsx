@@ -8,6 +8,8 @@ import PhoneSlider from "./PhoneSlider";
 import Slider from "../Slider/Slider";
 import LaptopSlider from "./LaptopSlider";
 import CategoriesContent from "./CategoriesContent";
+import VoucherBanner from "./VoucherBanner";
+import PaymentDiscount from "./PaymentDiscount";
 
 const Content = () => {
   const groupBanner = [banner1, banner2, banner3];
@@ -44,6 +46,8 @@ const Content = () => {
       </div>
 
       <CategoriesContent />
+      <VoucherBanner/>
+      <PaymentDiscount/>
     </div>
   );
 };
