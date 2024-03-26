@@ -2,6 +2,8 @@ import userModel from "../models/user.model";
 import asyncHandler from "express-async-handler";
 import { generateAccessToken, generateRefreshToken } from "../middlewares/jwt";
 import jwt from "jsonwebtoken";
+import { sendEmail } from "../utils/sendEmail";
+import crypto from "crypto";
 
 export const register = asyncHandler(async (req, res) => {
     const { email, password, firstname, lastname } = req.body;
@@ -105,5 +107,47 @@ export const logout = asyncHandler(async (req, res) => {
     return res.status(200).json({
         success: true,
         message: 'logout is done!'
+    });
+});
+
+// Client gửi mail
+// Server check email có hợp lệ hay không => Gửi mail + kèm theo link (password change token)
+// Client check mail => Click link
+// Client gửi api kèm token
+// Check token có giống vs token mà server gửi mail hay ko
+// Change password
+export const forgotPassword = asyncHandler(async (req, res) => {
+    const { email } = req.query;
+    if (!email) throw new Error("Missing email");
+    const user = await userModel.findOne({ email });
+    if (!user) throw new Error("User not found");
+    const resetToken = user.createPasswordChangedToken();
+    await user.save();
+
+    // create content for message
+    const html = `Please click on the link below to change your password. This link will expire within 15 minutes! <a href=${process.env.URL_SERVER}/api/user/reset-password/${resetToken}>Click here<a/>`
+
+    const result = await sendEmail(email, html);
+    return res.status(200).json({
+        success: true,
+        result
+    })
+});
+
+export const resetPassword = asyncHandler(async (req, res) => {
+    const { password, token } = req.body;
+    if (!password || !token) throw new Error("Missing inputs");
+    const passwordResetToken = crypto.createHash('sha256').update(token).digest('hex');
+    const user = await userModel.findOne({ passwordResetToken, passwordResetExpires: { $gt: Date.now() } }); // tgian trong Expires > tgian hiện tại => true
+    if (!user) throw new Error("Invalid reset Token");
+    // save new password, passResetToken, passChangeAt, passResetExpires (tgian hết hạn token gửi cho ngdung, khi họ quên mật khẩu)
+    user.password = password;
+    user.passwordResetToken = undefined;
+    user.passwordChangedAt = Date.now();
+    user.passwordResetExpires = undefined;
+    await user.save();
+    return res.status(200).json({
+        success: user ? true : false,
+        message: user ? "Updated password" : "Something went wrong"
     });
 });
