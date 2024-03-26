@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BsChevronCompactRight } from "react-icons/bs";
 import { BsChevronCompactLeft } from "react-icons/bs";
 import voucherBanner1 from "..//..//imgs/VoucherBanner/dongho-hssv-sliding-2024.webp";
@@ -22,6 +22,16 @@ const VoucherBanner = () => {
   ];
 
   const [sliderItem, setSliderItem] = useState(0);
+  useEffect(() => {
+    const sliderInterval = setInterval(() => {
+      if (sliderItem >= 0 && sliderItem < groupItems.length - 4) {
+        setSliderItem(sliderItem + 1);
+      } else {
+        setSliderItem(0);
+      }
+    }, 5000);
+    return () => clearInterval(sliderInterval);
+  }, [sliderItem]);
   const backSlider = () => {
     setSliderItem(sliderItem - 1);
   };
@@ -75,7 +85,7 @@ const VoucherBanner = () => {
             </div>
           )}
           {sliderItem !== groupItems.length - 4 && (
-            //  groupItems.length - 5 vì giao diện đang hiển thị trên cùng 1 hàng là 5 items rồi
+            //  groupItems.length - 4 vì giao diện đang hiển thị trên cùng 1 hàng là 4 items rồi
             //  thì khi click Next hình tiếp theo sẽ là hình thứ 6 và state sliderItem sẽ cập nhật từ 0 + 1
             <div>
               <button

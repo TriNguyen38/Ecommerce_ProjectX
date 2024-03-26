@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BsChevronCompactRight } from "react-icons/bs";
 import { BsChevronCompactLeft } from "react-icons/bs";
 import img1 from "..//..//imgs/img1.jpg";
@@ -31,9 +31,19 @@ const Slider = () => {
   const descClick = (descIndex) => {
     setSlider(descIndex);
   };
+  useEffect(() => {
+    const sliderInterval = setInterval(() => {
+      if (slider >= 0 && slider < groupImgs.length - 1) {
+        setSlider(slider + 1);
+      } else {
+        setSlider(0);
+      }
+    }, 5000);
+    return () => clearInterval(sliderInterval);
+  }, [slider]);
 
   return (
-    <div className="flex flex-col items-center flex-wrap overflow-hidden ml-2 mr-2 w-3/5 border-2 rounded-lg shadow-lg divide-solid z-20">
+    <div className="flex flex-col items-center flex-wrap overflow-hidden ml-2 mr-2 w-3/5 border-1 rounded-lg shadow-lg divide-solid z-20">
       <div className="  bg-slate-400 w-full flex flex-row overflow-hidden h-80 items-center group relative">
         {groupImgs.map((imgItem, index) => (
           <img
@@ -69,7 +79,9 @@ const Slider = () => {
           {groupImgs.map((descItem, descIndex) => (
             <div
               key={descIndex}
-              className="cursor-pointer h-full flex items-center justify-center w-full hover:bg-slate-200"
+              className={`cursor-pointer h-full border-b-2 flex items-center justify-center w-full hover:bg-slate-200 ${
+                descIndex === slider ? "border-y-red-500" : "bg-white"
+              }`}
               onClick={() => descClick(descIndex)}
             >
               {descItem.desc}
