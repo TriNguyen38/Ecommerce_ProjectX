@@ -10,6 +10,7 @@ import LaptopSlider from "./LaptopSlider";
 import CategoriesContent from "./CategoriesContent";
 import VoucherBanner from "./VoucherBanner";
 import PaymentDiscount from "./PaymentDiscount";
+import CategoriesMenu from "../Navbar/CategoriesMenu";
 
 const Content = () => {
   const groupBanner = [banner1, banner2, banner3];
@@ -46,8 +47,8 @@ const Content = () => {
       </div>
 
       <CategoriesContent />
-      <VoucherBanner/>
-      <PaymentDiscount/>
+      <VoucherBanner />
+      <PaymentDiscount />
     </div>
   );
 };
