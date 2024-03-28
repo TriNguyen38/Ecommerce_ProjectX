@@ -10,12 +10,25 @@ import { FcTwoSmartphones } from "react-icons/fc";
 import { LuSmartphoneCharging } from "react-icons/lu";
 import { TbSpeakerphone } from "react-icons/tb";
 import { FaRegNewspaper } from "react-icons/fa6";
+const PhoneBrand = ["A", "B", "C", "D", "E"];
+const PhonePriceRange = ["A", "B", "C", "D", "E"];
+const PopularPhone = ["A", "B", "C", "D", "E"];
+const TabletBrand = ["A", "B", "C", "D", "E"];
+const PopularTablet = ["A", "B", "C", "D", "E"];
+const Categories = [
+  { title: "Phone Brand", item: PhoneBrand },
+  { title: "Phone Price Range", item: PhonePriceRange },
+  { title: "Popular Phone", item: PopularPhone },
+  { title: "Tablet Brand", item: TabletBrand },
+  { title: "Popular Tablet", item: PopularTablet },
+];
 export const listSidebar = [
   {
     index: 1,
     name1: "Phone,",
     name2 : "Tablet",
-    icon : <GiSmartphone/>
+    icon : <GiSmartphone/>,
+    title: Categories
   },
   {
     index: 2,

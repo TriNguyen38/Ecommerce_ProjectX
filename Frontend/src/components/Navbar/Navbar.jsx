@@ -1,10 +1,13 @@
 import React from "react";
+import { useState } from "react";
 import { listSidebar } from "./listSidebar";
 import { BsChevronRight } from "react-icons/bs";
 import CategoriesMenu from "./CategoriesMenu";
 
 const Navbar = () => {
   const items = listSidebar;
+
+
   return (
     <div className="flex relative group">
       <div className="bg-white border-2 shadow-lg divide-solid z-20 text-black box-content flex flex-col p-2 rounded-lg w-full">
@@ -34,9 +37,8 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-
-      <div className="w-[940px] h-full hidden group-hover:block absolute z-30 left-[210px] box-content border-2 shadow-lg divide-solid bg-white rounded-lg p-2">
-        <CategoriesMenu />
+      <div className="w-[940px] hidden group-hover:block h-full absolute z-30 left-[210px] box-content border-2 shadow-lg divide-solid bg-white rounded-lg p-2">
+        <CategoriesMenu items = { items } />
       </div>
     </div>
   );
